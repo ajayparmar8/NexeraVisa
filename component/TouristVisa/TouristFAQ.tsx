@@ -277,7 +277,7 @@ export default function TouristFAQ() {
                     className="text-[17px] leading-[1.45] text-[#0A0F1C] sm:text-[19px]"
                     style={{
                       fontFamily: "'Inter', sans-serif",
-                      fontWeight: 500,
+                      fontWeight: 600,
                       letterSpacing: "-0.03em",
                     }}
                   >
@@ -356,4 +356,4 @@ export default function TouristFAQ() {
 
     </section>
   );
-}   
+}
