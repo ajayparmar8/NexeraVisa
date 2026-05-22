@@ -24,9 +24,10 @@ export default function Header() {
     useState(false);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-[#E5E7EB] bg-white shadow-sm">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#E5E7EB] bg-white shadow-sm">
 
-      <div className="mx-auto flex h-[80px] max-w-[1450px] items-center justify-between px-5 lg:px-10">
+      {/* MAIN HEADER */}
+      <div className="mx-auto flex h-[72px] max-w-[1450px] items-center justify-between px-4 sm:px-5 lg:h-[82px] lg:px-10">
 
         {/* LOGO */}
         <Link
@@ -36,7 +37,7 @@ export default function Header() {
           <img
             src="/Logo2.png"
             alt="Nexera Consultancy"
-            className="h-24 w-auto object-contain sm:h-28 md:h-32"
+            className="h-16 w-auto object-contain sm:h-20 md:h-24"
           />
         </Link>
 
@@ -67,6 +68,7 @@ export default function Header() {
               setIsOpen(false)
             }
           >
+
             <button
               className="group relative flex items-center gap-1 text-[18px] text-[#0A0F1C]"
               style={{
@@ -86,9 +88,10 @@ export default function Header() {
               />
 
               <span className="absolute -bottom-2 left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
+
             </button>
 
-            {/* DROPDOWN */}
+            {/* DESKTOP DROPDOWN */}
             <AnimatePresence>
               {isOpen && (
                 <motion.div
@@ -109,6 +112,7 @@ export default function Header() {
                   }}
                   className="absolute left-0 top-16 w-[250px] overflow-hidden rounded-xl border border-[#E5E7EB] bg-white shadow-[0_20px_50px_rgba(0,0,0,0.08)]"
                 >
+
                   <div className="flex flex-col py-2">
 
                     <Link
@@ -145,9 +149,11 @@ export default function Header() {
                     </Link>
 
                   </div>
+
                 </motion.div>
               )}
             </AnimatePresence>
+
           </div>
 
           {/* ABOUT */}
@@ -177,10 +183,11 @@ export default function Header() {
 
             <span className="absolute -bottom-2 left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
           </Link>
+
         </nav>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
 
           {/* CALL SECTION */}
           <div className="hidden items-center gap-3 lg:flex">
@@ -206,6 +213,7 @@ export default function Header() {
               >
                 +91 9898938186
               </p>
+
             </div>
 
             {/* CALL ICON */}
@@ -217,6 +225,7 @@ export default function Header() {
               />
 
             </div>
+
           </div>
 
           {/* MOBILE MENU BUTTON */}
@@ -226,6 +235,7 @@ export default function Header() {
             }
             className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#DCEBFF] lg:hidden"
           >
+
             {mobileMenu ? (
               <X
                 size={24}
@@ -237,8 +247,11 @@ export default function Header() {
                 className="text-[#2563EB]"
               />
             )}
+
           </button>
+
         </div>
+
       </div>
 
       {/* MOBILE MENU */}
@@ -262,48 +275,168 @@ export default function Header() {
             }}
             className="border-t border-[#E5E7EB] bg-white lg:hidden"
           >
-            <div className="flex flex-col px-6 py-5">
 
-              {[
-                {
-                  name: "Home",
-                  link: "/",
-                },
-                {
-                  name: "About Us",
-                  link: "/about",
-                },
-                {
-                  name: "Contact Us",
-                  link: "/contact",
-                },
-              ].map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.link}
-                  className="border-b border-gray-100 py-4 text-[26px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
+            <div className="flex flex-col px-5 py-4">
+
+              {/* HOME */}
+              <Link
+                href="/"
+                onClick={() =>
+                  setMobileMenu(false)
+                }
+                className="border-b border-gray-100 py-4 text-[24px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
+                style={{
+                  fontFamily:
+                    "'Cormorant Garamond', serif",
+                }}
+              >
+                Home
+              </Link>
+
+              {/* VISA DROPDOWN */}
+              <div className="border-b border-gray-100 py-4">
+
+                <button
+                  onClick={() =>
+                    setIsOpen(!isOpen)
+                  }
+                  className="flex w-full items-center justify-between text-[24px] text-[#0A0F1C]"
                   style={{
                     fontFamily:
                       "'Cormorant Garamond', serif",
                   }}
                 >
-                  {item.name}
-                </Link>
-              ))}
+                  Visa
+
+                  <ChevronDown
+                    size={22}
+                    className={`transition-all duration-300 ${
+                      isOpen
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+
+                </button>
+
+                {/* MOBILE DROPDOWN */}
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        height: "auto",
+                      }}
+                      exit={{
+                        opacity: 0,
+                        height: 0,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                      }}
+                      className="overflow-hidden"
+                    >
+
+                      <div className="mt-4 flex flex-col rounded-2xl bg-[#F8FAFC] p-3">
+
+                        <Link
+                          href="/workvisa"
+                          onClick={() =>
+                            setMobileMenu(false)
+                          }
+                          className="rounded-xl px-4 py-3 text-[20px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
+                          style={{
+                            fontFamily:
+                              "'Cormorant Garamond', serif",
+                          }}
+                        >
+                          Work Visa
+                        </Link>
+
+                        <Link
+                          href="/studyvisa"
+                          onClick={() =>
+                            setMobileMenu(false)
+                          }
+                          className="rounded-xl px-4 py-3 text-[20px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
+                          style={{
+                            fontFamily:
+                              "'Cormorant Garamond', serif",
+                          }}
+                        >
+                          Study Visa
+                        </Link>
+
+                        <Link
+                          href="/touristvisa"
+                          onClick={() =>
+                            setMobileMenu(false)
+                          }
+                          className="rounded-xl px-4 py-3 text-[20px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
+                          style={{
+                            fontFamily:
+                              "'Cormorant Garamond', serif",
+                          }}
+                        >
+                          Tourist Visa
+                        </Link>
+
+                      </div>
+
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+              </div>
+
+              {/* ABOUT */}
+              <Link
+                href="/about"
+                onClick={() =>
+                  setMobileMenu(false)
+                }
+                className="border-b border-gray-100 py-4 text-[24px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
+                style={{
+                  fontFamily:
+                    "'Cormorant Garamond', serif",
+                }}
+              >
+                About Us
+              </Link>
+
+              {/* CONTACT */}
+              <Link
+                href="/contact"
+                onClick={() =>
+                  setMobileMenu(false)
+                }
+                className="border-b border-gray-100 py-4 text-[24px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
+                style={{
+                  fontFamily:
+                    "'Cormorant Garamond', serif",
+                }}
+              >
+                Contact Us
+              </Link>
 
               {/* MOBILE CALL */}
-              <div className="mt-5 flex items-center gap-3">
+              <div className="mt-6 flex items-center gap-3 rounded-2xl bg-[#F8FAFC] p-4">
 
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#2563EB]">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#2563EB]">
 
                   <Phone
-                    size={16}
+                    size={18}
                     className="text-white"
                   />
 
                 </div>
 
                 <div>
+
                   <p
                     className="text-[12px] text-gray-500"
                     style={{
@@ -323,13 +456,17 @@ export default function Header() {
                   >
                     +91 9898938186
                   </p>
+
                 </div>
+
               </div>
 
             </div>
+
           </motion.div>
         )}
       </AnimatePresence>
+
     </header>
   );
 }
