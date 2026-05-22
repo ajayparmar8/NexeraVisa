@@ -6,78 +6,110 @@ import {
   Send,
   RefreshCcw,
   BadgeCheck,
+  Globe,
+  ArrowUpRight,
 } from "lucide-react";
+
+import { motion, Variants } from "framer-motion";
 
 const processSteps = [
   {
-    number: "1",
-    icon: <Search size={24} />,
+    icon: <Search size={26} strokeWidth={1.7} />,
     title: "Initial Consultation",
     desc: "Assess your eligibility and discuss your career goals.",
-    position: "top",
   },
 
   {
-    number: "2",
-    icon: <FileText size={24} />,
+    icon: <FileText size={26} strokeWidth={1.7} />,
     title: "Document Preparation",
     desc: "Gather and prepare all required documents.",
-    position: "bottom",
   },
 
   {
-    number: "3",
-    icon: <Send size={24} />,
+    icon: <Send size={26} strokeWidth={1.7} />,
     title: "Application Submission",
-    desc: "Submit your work visa application.",
-    position: "top",
+    desc: "Submit your work visa application to immigration authorities.",
   },
 
   {
-    number: "4",
-    icon: <RefreshCcw size={24} />,
+    icon: <RefreshCcw size={26} strokeWidth={1.7} />,
     title: "Follow-up & Updates",
-    desc: "Track application status and updates.",
-    position: "bottom",
+    desc: "Track application status and provide regular updates.",
   },
 
   {
-    number: "5",
-    icon: <BadgeCheck size={24} />,
+    icon: <BadgeCheck size={26} strokeWidth={1.7} />,
     title: "Visa Approval",
-    desc: "Receive your visa and prepare for departure.",
-    position: "top",
+    desc: "Receive your work visa and prepare for departure.",
+  },
+
+  {
+    icon: <Globe size={26} strokeWidth={1.7} />,
+    title: "Global Opportunities",
+    desc: "Explore international career opportunities with expert visa guidance.",
   },
 ];
 
+/* ANIMATION VARIANTS */
+const fadeInUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
+const staggerContainer: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+
+  visible: {
+    opacity: 1,
+
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 export default function WorkVisaProcess() {
   return (
-    <section className="relative overflow-hidden bg-white px-4 py-20 sm:px-6 lg:px-16">
+    <section className="bg-[#F8F8F2] px-4 py-16 sm:px-6 lg:px-16">
 
-      {/* SOFT GLOW */}
-      <div className="absolute left-0 top-0 h-[300px] w-[300px] rounded-full bg-[#2563EB]/10 blur-3xl" />
-
-      <div className="relative z-10 mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1450px]">
 
         {/* TOP */}
-        <div className="mb-20 text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+          className="mb-12 text-center sm:mb-14"
+        >
 
           <p
-            className="mb-3 text-[11px] uppercase tracking-[0.42em] text-[#2563EB]"
+            className="mb-2 text-[10px] uppercase tracking-[0.35em] text-[#2563EB] sm:text-[12px]"
             style={{
               fontFamily: "'Inter', sans-serif",
             }}
           >
-            Work Process
+            Process
           </p>
 
           <h2
-            className="text-[42px] leading-[0.92] text-[#0A0F1C] sm:text-[56px] md:text-[72px]"
+            className="text-[38px] leading-[0.9] text-[#0A0F1C] sm:text-[52px] md:text-[68px]"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
-
-              textShadow:
-                "0px 1px 0px rgba(255,255,255,0.7), 0px 8px 30px rgba(10,15,28,0.08)",
             }}
           >
             Our Work Visa{" "}
@@ -87,180 +119,80 @@ export default function WorkVisaProcess() {
           </h2>
 
           <p
-            className="mx-auto mt-5 max-w-[700px] text-[15px] leading-8 text-[#6B7280]"
+            className="mx-auto mt-4 max-w-[720px] text-[14px] leading-7 text-[#6B7280] sm:text-[15px] sm:leading-8"
             style={{
               fontFamily: "'Inter', sans-serif",
             }}
           >
-            A streamlined 5-step immigration process designed
-            to make your work visa application smooth,
-            transparent, and stress-free.
+            A streamlined 5-step process designed to make
+            your work visa application smooth, efficient,
+            and stress-free.
           </p>
 
-        </div>
+        </motion.div>
 
-        {/* DESKTOP PROCESS */}
-        <div className="relative hidden lg:block">
+        {/* GRID */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{
+            once: true,
+            margin: "-100px",
+          }}
+          className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+        >
 
-          {/* CENTER LINE */}
-          <div className="absolute top-1/2 left-0 h-[2px] w-full -translate-y-1/2 bg-[#2563EB]/15">
-
-            {/* ANIMATED LINE */}
-            <div className="animate-line absolute left-0 top-0 h-full w-[180px] bg-gradient-to-r from-transparent via-[#2563EB] to-transparent" />
-
-          </div>
-
-          {/* STEPS */}
-          <div className="relative grid grid-cols-5">
-
-            {processSteps.map((step, index) => (
-              <div
-                key={index}
-                className={`relative flex flex-col items-center ${
-                  step.position === "top"
-                    ? "pb-56"
-                    : "pt-56"
-                }`}
-              >
-
-                {/* CONNECTOR */}
-                <div
-                  className={`absolute left-1/2 w-[2px] -translate-x-1/2 bg-[#2563EB]/15 ${
-                    step.position === "top"
-                      ? "bottom-[120px] h-[120px]"
-                      : "top-[120px] h-[120px]"
-                  }`}
-                />
-
-                {/* CONTENT */}
-                <div
-                  className={`flex flex-col items-center text-center ${
-                    step.position === "bottom"
-                      ? "order-2"
-                      : ""
-                  }`}
-                >
-
-                  {/* ICON */}
-                  <div className="relative flex h-24 w-24 items-center justify-center rounded-full border border-[#2563EB]/10 bg-white text-[#2563EB] shadow-[0_20px_60px_rgba(37,99,235,0.08)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_70px_rgba(37,99,235,0.18)]">
-
-                    {/* NUMBER */}
-                    <div className="absolute -left-1 -top-1 flex h-7 w-7 items-center justify-center rounded-full bg-[#2563EB] text-[11px] font-semibold text-white">
-
-                      {step.number}
-
-                    </div>
-
-                    {step.icon}
-
-                  </div>
-
-                  {/* TEXT */}
-                  <div className="mt-7">
-
-                    <h3
-                      className="text-[30px] leading-[1] text-[#0A0F1C]"
-                      style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                      }}
-                    >
-                      {step.title}
-                    </h3>
-
-                    <p
-                      className="mx-auto mt-4 max-w-[230px] text-[14px] leading-7 text-[#6B7280]"
-                      style={{
-                        fontFamily: "'Inter', sans-serif",
-                      }}
-                    >
-                      {step.desc}
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-
-        {/* MOBILE */}
-        <div className="space-y-12 lg:hidden">
-
-          {processSteps.map((step, index) => (
-            <div
+          {processSteps.map((item, index) => (
+            <motion.div
               key={index}
-              className="relative flex items-start gap-5"
+              variants={fadeInUp}
+              className="group relative overflow-hidden rounded-[4px] border border-[#ECE9DF] bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[#2563EB] hover:bg-[#2563EB] sm:p-7"
             >
 
-              {/* LINE */}
-              {index !== processSteps.length - 1 && (
-                <div className="absolute left-[38px] top-[80px] h-[95px] w-[2px] bg-[#2563EB]/15" />
-              )}
+              {/* ARROW */}
+              <div className="absolute right-0 top-0 flex h-16 w-16 items-start justify-end rounded-bl-full bg-[#F8F8F2] p-4 transition-all duration-500 group-hover:bg-white">
+
+                <ArrowUpRight
+                  size={20}
+                  className="text-[#0A0F1C] transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+
+              </div>
 
               {/* ICON */}
-              <div className="relative z-10 flex h-20 w-20 min-w-[80px] items-center justify-center rounded-full border border-[#2563EB]/10 bg-white text-[#2563EB] shadow-[0_20px_60px_rgba(37,99,235,0.08)]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#ECE9DF] bg-[#F8F8F2] text-[#1D3A52] transition-all duration-500 group-hover:border-white/20 group-hover:bg-white/10 group-hover:text-white">
 
-                {/* NUMBER */}
-                <div className="absolute -left-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#2563EB] text-[10px] font-semibold text-white">
-
-                  {step.number}
-
-                </div>
-
-                {step.icon}
+                {item.icon}
 
               </div>
 
-              {/* TEXT */}
-              <div className="pt-2">
+              {/* TITLE */}
+              <h3
+                className="mt-5 pr-10 text-[28px] leading-[1] text-[#0A0F1C] transition-colors duration-500 group-hover:text-white sm:text-[32px]"
+                style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                }}
+              >
+                {item.title}
+              </h3>
 
-                <h3
-                  className="text-[28px] leading-[1] text-[#0A0F1C]"
-                  style={{
-                    fontFamily: "'Cormorant Garamond', serif",
-                  }}
-                >
-                  {step.title}
-                </h3>
+              {/* DESCRIPTION */}
+              <p
+                className="mt-4 max-w-[320px] text-[14px] leading-7 text-[#6B7280] transition-colors duration-500 group-hover:text-white/80"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                }}
+              >
+                {item.desc}
+              </p>
 
-                <p
-                  className="mt-3 max-w-[320px] text-[14px] leading-7 text-[#6B7280]"
-                  style={{
-                    fontFamily: "'Inter', sans-serif",
-                  }}
-                >
-                  {step.desc}
-                </p>
-
-              </div>
-
-            </div>
+            </motion.div>
           ))}
 
-        </div>
+        </motion.div>
 
       </div>
-
-      {/* LINE ANIMATION */}
-      <style jsx>{`
-        @keyframes line {
-          0% {
-            left: -180px;
-          }
-
-          100% {
-            left: 100%;
-          }
-        }
-
-        .animate-line {
-          animation: line 4s linear infinite;
-        }
-      `}</style>
 
     </section>
   );

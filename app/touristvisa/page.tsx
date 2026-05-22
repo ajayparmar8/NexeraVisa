@@ -1,5 +1,6 @@
 import TouristDestinations from "@/component/TouristVisa/Touristdestinations";
 import TouristVisaSection from "@/component/TouristVisa/Touristvisasection";
+import TouristVisaTypes from "@/component/TouristVisa/TouristVisaTypes";
 import TouristVisaHero from "@/component/TouristVisa/TourtistVisaHero";
     
 export default function touristvisa() {
@@ -8,6 +9,7 @@ export default function touristvisa() {
         <TouristVisaHero />
         <TouristVisaSection />  
         <TouristDestinations/>
+        <TouristVisaTypes  />
         </>
     )
 }

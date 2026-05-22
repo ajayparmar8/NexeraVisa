@@ -3,9 +3,9 @@
 import { motion, Variants } from "framer-motion";
 
 import {
-  Headphones,
-  FileCheck,
-  ShieldCheck,
+  GraduationCap,
+  FileText,
+  Award,
 } from "lucide-react";
 
 /* ───────────────── VARIANTS ───────────────── */
@@ -84,24 +84,24 @@ function AnimatedLine({
 const contactItems = [
   {
     id: 1,
-    icon: Headphones,
-    value: "Free initial consultation",
+    icon: GraduationCap,
+    value: "University selection guidance",
   },
 
   {
     id: 2,
-    icon: FileCheck,
-    value: "Expert document review",
+    icon: FileText,
+    value: "Application assistance",
   },
 
   {
     id: 3,
-    icon: ShieldCheck,
-    value: "24/7 application support",
+    icon: Award,
+    value: "Scholarship information",
   },
 ];
 
-export default function CTA() {
+export default function StudyCTA() {
   return (
     <section className="overflow-hidden bg-white px-4 py-10 sm:px-6 md:px-10 md:py-16 lg:px-16">
 
@@ -162,13 +162,13 @@ export default function CTA() {
             >
 
               <AnimatedLine delay={0.35}>
-                Ready to Advance
+                Ready to Start
               </AnimatedLine>
 
               <AnimatedLine delay={0.5}>
                 Your{" "}
                 <span className="text-[#60A5FA]">
-                  Career Abroad?
+                  Educational Journey?
                 </span>
               </AnimatedLine>
 
@@ -186,11 +186,7 @@ export default function CTA() {
                 fontFamily: "'Inter', sans-serif",
               }}
             >
-              Start your work visa application today and
-              take the first step towards international
-              employment opportunities. Our expert team
-              will guide you through every step of the
-              process.
+              Take the first step towards studying at a world-class institution. Our education experts will help you choose the right program and guide you through the entire application process.
             </motion.p>
 
             {/* CONTACT ITEMS */}
@@ -287,7 +283,7 @@ export default function CTA() {
             >
 
               <AnimatedLine delay={0.35}>
-               Start Your Work 
+                Start Your Study
               </AnimatedLine>
 
               <AnimatedLine
@@ -311,9 +307,7 @@ export default function CTA() {
                 fontFamily: "'Inter', sans-serif",
               }}
             >
-             Get expert guidance for your work visa application.
-
-
+              Begin your journey to international education.
             </motion.p>
 
             {/* FORM */}
