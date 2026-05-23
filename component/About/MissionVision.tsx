@@ -6,7 +6,7 @@ const mission =
   "To provide exceptional immigration consulting services that enable individuals and families to achieve their dreams of international mobility. We are committed to delivering personalized, professional, and reliable services that exceed our clients' expectations while maintaining the highest standards of integrity and excellence.";
 
 const vision =
-  "To be the most trusted and preferred immigration consultancy firm globally, recognized for our expertise, innovation, and commitment to client success. We envision a world where geographical boundaries do not limit people\u2019s aspirations and opportunities for personal and professional growth.";
+  "To be the most trusted and preferred immigration consultancy firm globally, recognized for our expertise, innovation, and commitment to client success. We envision a world where geographical boundaries do not limit people’s aspirations and opportunities for personal and professional growth.";
 
 export default function MissionVision() {
   return (
@@ -27,7 +27,7 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="mb-2 text-[10px] uppercase tracking-[0.45em] text-[#2563EB] sm:text-[11px]"
+            className="mb-2 text-[10px] uppercase tracking-[0.35em] text-[#2563EB] sm:text-[11px] sm:tracking-[0.45em]"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             WHO WE ARE
@@ -38,7 +38,7 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="mx-auto max-w-[850px] text-[32px] leading-[0.95] text-[#111827] sm:text-[48px] md:text-[60px]"
+            className="mx-auto max-w-[850px] text-[30px] leading-[1] text-[#111827] sm:text-[48px] md:text-[60px]"
             style={{ fontFamily: "'Cormorant Garamond', serif" }}
           >
             Our <span className="text-[#2563EB]">Mission</span> & Vision
@@ -49,7 +49,7 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true }}
-            className="mx-auto mt-3 max-w-[580px] text-[13px] leading-7 text-gray-500 sm:text-[14px]"
+            className="mx-auto mt-3 max-w-[580px] px-2 text-[13px] leading-7 text-gray-500 sm:px-0 sm:text-[14px]"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Guided by a clear purpose and a strong vision for the future of global mobility.
@@ -58,7 +58,7 @@ export default function MissionVision() {
         </div>
 
         {/* GRID */}
-        <div className="relative grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+        <div className="relative grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
 
           {/* CENTER LINE — desktop only */}
           <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gray-200 md:block" />
@@ -69,16 +69,19 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="text-center md:text-left"
           >
             <h3
-              className="text-[28px] text-[#2563EB] sm:text-[36px]"
+              className="text-[26px] text-[#2563EB] sm:text-[36px]"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Our Mission
             </h3>
-            <div className="mt-4 h-px w-full bg-gray-200" />
+
+            <div className="mx-auto mt-4 h-px w-full bg-gray-200 md:mx-0" />
+
             <p
-              className="mt-5 text-[14px] leading-[2] text-gray-500"
+              className="mt-5 text-[14px] leading-[2] text-gray-500 sm:text-[15px]"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {mission}
@@ -91,16 +94,19 @@ export default function MissionVision() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
+            className="text-center md:text-left"
           >
             <h3
-              className="text-[28px] text-[#2563EB] sm:text-[36px]"
+              className="text-[26px] text-[#2563EB] sm:text-[36px]"
               style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
               Our Vision
             </h3>
-            <div className="mt-4 h-px w-full bg-gray-200" />
+
+            <div className="mx-auto mt-4 h-px w-full bg-gray-200 md:mx-0" />
+
             <p
-              className="mt-5 text-[14px] leading-[2] text-gray-500"
+              className="mt-5 text-[14px] leading-[2] text-gray-500 sm:text-[15px]"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {vision}

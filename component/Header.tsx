@@ -27,7 +27,7 @@ export default function Header() {
     <header className="fixed left-0 top-0 z-50 w-full border-b border-[#E5E7EB] bg-white shadow-sm">
 
       {/* MAIN HEADER */}
-      <div className="mx-auto flex h-[72px] max-w-[1450px] items-center justify-between px-4 sm:px-5 lg:h-[82px] lg:px-10">
+      <div className="mx-auto flex h-[68px] max-w-[1450px] items-center justify-between px-4 sm:px-5 md:px-6 lg:h-[82px] lg:px-10">
 
         {/* LOGO */}
         <Link
@@ -37,7 +37,7 @@ export default function Header() {
           <img
             src="/Logo4.png"
             alt="Nexera Consultancy"
-            className="h-16 w-auto object-contain sm:h-20 md:h-14 md:-ml-4"
+            className="h-12 w-auto object-contain sm:h-14 md:h-14 lg:h-16 lg:-ml-4"
           />
         </Link>
 
@@ -187,7 +187,7 @@ export default function Header() {
         </nav>
 
         {/* RIGHT SIDE */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
 
           {/* CALL SECTION */}
           <div className="hidden items-center gap-3 lg:flex">
@@ -233,17 +233,17 @@ export default function Header() {
             onClick={() =>
               setMobileMenu(!mobileMenu)
             }
-            className="flex h-11 w-11 items-center justify-center rounded-lg border border-[#DCEBFF] lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#DCEBFF] lg:hidden"
           >
 
             {mobileMenu ? (
               <X
-                size={24}
+                size={22}
                 className="text-[#2563EB]"
               />
             ) : (
               <Menu
-                size={24}
+                size={22}
                 className="text-[#2563EB]"
               />
             )}
@@ -273,7 +273,7 @@ export default function Header() {
             transition={{
               duration: 0.25,
             }}
-            className="border-t border-[#E5E7EB] bg-white lg:hidden"
+            className="max-h-[calc(100vh-68px)] overflow-y-auto border-t border-[#E5E7EB] bg-white lg:hidden"
           >
 
             <div className="flex flex-col px-5 py-4">
@@ -284,7 +284,7 @@ export default function Header() {
                 onClick={() =>
                   setMobileMenu(false)
                 }
-                className="border-b border-gray-100 py-4 text-[24px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
+                className="border-b border-gray-100 py-4 text-[22px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
                 style={{
                   fontFamily:
                     "'Cormorant Garamond', serif",
@@ -300,7 +300,7 @@ export default function Header() {
                   onClick={() =>
                     setIsOpen(!isOpen)
                   }
-                  className="flex w-full items-center justify-between text-[24px] text-[#0A0F1C]"
+                  className="flex w-full items-center justify-between text-[22px] text-[#0A0F1C]"
                   style={{
                     fontFamily:
                       "'Cormorant Garamond', serif",
@@ -348,7 +348,7 @@ export default function Header() {
                           onClick={() =>
                             setMobileMenu(false)
                           }
-                          className="rounded-xl px-4 py-3 text-[20px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
+                          className="rounded-xl px-4 py-3 text-[18px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
                           style={{
                             fontFamily:
                               "'Cormorant Garamond', serif",
@@ -362,7 +362,7 @@ export default function Header() {
                           onClick={() =>
                             setMobileMenu(false)
                           }
-                          className="rounded-xl px-4 py-3 text-[20px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
+                          className="rounded-xl px-4 py-3 text-[18px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
                           style={{
                             fontFamily:
                               "'Cormorant Garamond', serif",
@@ -376,7 +376,7 @@ export default function Header() {
                           onClick={() =>
                             setMobileMenu(false)
                           }
-                          className="rounded-xl px-4 py-3 text-[20px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
+                          className="rounded-xl px-4 py-3 text-[18px] text-[#0A0F1C] transition-all duration-300 hover:bg-white hover:text-[#2563EB]"
                           style={{
                             fontFamily:
                               "'Cormorant Garamond', serif",
@@ -399,7 +399,7 @@ export default function Header() {
                 onClick={() =>
                   setMobileMenu(false)
                 }
-                className="border-b border-gray-100 py-4 text-[24px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
+                className="border-b border-gray-100 py-4 text-[22px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
                 style={{
                   fontFamily:
                     "'Cormorant Garamond', serif",
@@ -414,7 +414,7 @@ export default function Header() {
                 onClick={() =>
                   setMobileMenu(false)
                 }
-                className="border-b border-gray-100 py-4 text-[24px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
+                className="border-b border-gray-100 py-4 text-[22px] text-[#0A0F1C] transition-all duration-300 hover:text-[#2563EB]"
                 style={{
                   fontFamily:
                     "'Cormorant Garamond', serif",
