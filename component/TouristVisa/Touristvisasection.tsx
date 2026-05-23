@@ -6,6 +6,8 @@ import React, {
   useRef,
 } from "react";
 
+import Link from "next/link";
+
 import {
   motion,
   useInView,
@@ -24,19 +26,42 @@ const CountUp = ({
   duration?: number;
 }) => {
   const [count, setCount] = useState(0);
+
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+
+  const inView = useInView(ref, {
+    once: true,
+  });
 
   useEffect(() => {
     if (inView) {
       let startTime: number | null = null;
-      const animate = (timestamp: number) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        setCount(Math.floor(progress * end));
-        if (progress < 1) requestAnimationFrame(animate);
+
+      const animate = (
+        timestamp: number
+      ) => {
+        if (!startTime)
+          startTime = timestamp;
+
+        const progress = Math.min(
+          (timestamp - startTime) /
+            duration,
+          1
+        );
+
+        setCount(
+          Math.floor(progress * end)
+        );
+
+        if (progress < 1)
+          requestAnimationFrame(
+            animate
+          );
       };
-      requestAnimationFrame(animate);
+
+      requestAnimationFrame(
+        animate
+      );
     }
   }, [inView, end, duration]);
 
@@ -45,16 +70,26 @@ const CountUp = ({
 
 const TouristVisaSection = () => {
   return (
-    <section className="overflow-hidden bg-[#F8FAFC] px-6 py-20 md:px-10 lg:px-16 md:py-28">
+    <section className="overflow-hidden bg-white px-4 py-14 sm:px-6 md:px-10 lg:px-16 lg:py-20">
 
-      <div className="mx-auto grid max-w-[1350px] gap-16 lg:grid-cols-2 lg:items-stretch">
+      <div className="mx-auto grid max-w-[1350px] gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-16">
 
         {/* LEFT SIDE — CONTENT */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          initial={{
+            opacity: 0,
+            x: -50,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
+          viewport={{
+            once: true,
+          }}
           className="flex flex-col justify-between"
         >
 
@@ -62,107 +97,168 @@ const TouristVisaSection = () => {
           <div>
 
             <p
-              className="text-[12px] uppercase tracking-[0.45em] text-[#2563EB]"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="text-[10px] uppercase tracking-[0.35em] text-[#2563EB] sm:text-[12px] sm:tracking-[0.45em]"
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+              }}
             >
               Travel Visa Experts
             </p>
 
             <h2
-              className="mt-4 text-4xl leading-[1] text-[#0A0F1C] sm:text-5xl md:text-6xl lg:text-7xl"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              className="mt-4 text-[34px] leading-[1] text-[#0A0F1C] sm:text-5xl md:text-6xl lg:text-7xl"
+              style={{
+                fontFamily:
+                  "'Cormorant Garamond', serif",
+              }}
             >
               Explore the World
               <br />
-              <span className="text-[#2563EB]">with Confidence</span>
+
+              <span className="text-[#2563EB]">
+                with Confidence
+              </span>
             </h2>
 
             <p
-              className="mt-6 text-[15px] leading-8 text-gray-500 md:text-[16px]"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="mt-6 text-[14px] leading-7 text-gray-500 sm:text-[15px] md:text-[16px] md:leading-8"
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+              }}
             >
-              Nexera Consultancy makes international travel accessible with our
-              comprehensive tourist visa services. Whether you're planning a
-              vacation, business trip, or family visit, we handle all the visa
-              complexities for you.
+              Nexera Consultancy makes
+              international travel accessible
+              with our comprehensive tourist
+              visa services. Whether you're
+              planning a vacation, business
+              trip, or family visit, we handle
+              all the visa complexities for
+              you.
             </p>
 
             <p
-              className="mt-4 text-[15px] leading-8 text-gray-500 md:text-[16px]"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              className="mt-4 text-[14px] leading-7 text-gray-500 sm:text-[15px] md:text-[16px] md:leading-8"
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+              }}
             >
-              Our experienced team ensures your tourist visa application is
-              processed smoothly and efficiently, so you can focus on planning
-              your perfect trip.
+              Our experienced team ensures
+              your tourist visa application is
+              processed smoothly and
+              efficiently, so you can focus on
+              planning your perfect trip.
             </p>
 
             {/* CHECKLIST */}
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+
               {[
                 "Tourist Visa Applications",
                 "Family Visit Visas",
                 "Business Travel Visas",
                 "Fast-Track Processing",
               ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <CheckCircle2 className="text-[#2563EB] shrink-0" size={18} />
+                <div
+                  key={idx}
+                  className="flex items-center gap-3"
+                >
+
+                  <CheckCircle2
+                    className="shrink-0 text-[#2563EB]"
+                    size={18}
+                  />
+
                   <span
-                    className="text-[14px] font-medium text-[#0A0F1C]"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    className="text-[13px] font-medium text-[#0A0F1C] sm:text-[14px]"
+                    style={{
+                      fontFamily:
+                        "'Inter', sans-serif",
+                    }}
                   >
                     {item}
                   </span>
+
                 </div>
               ))}
+
             </div>
 
           </div>
 
           {/* BOTTOM — STATS + BUTTON */}
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
 
-            <div className="flex items-center gap-10 border-t border-gray-200 pt-10">
+            <div className="flex flex-wrap items-center gap-8 border-t border-gray-200 pt-8 sm:gap-10 sm:pt-10">
 
               <div>
+
                 <h3
-                  className="text-5xl text-[#2563EB]"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  className="text-4xl text-[#2563EB] sm:text-5xl"
+                  style={{
+                    fontFamily:
+                      "'Cormorant Garamond', serif",
+                  }}
                 >
                   <CountUp end={8000} />+
                 </h3>
+
                 <p
-                  className="mt-1 text-[12px] font-bold uppercase tracking-widest text-gray-400"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  className="mt-1 text-[11px] font-bold uppercase tracking-widest text-gray-400 sm:text-[12px]"
+                  style={{
+                    fontFamily:
+                      "'Inter', sans-serif",
+                  }}
                 >
                   Tourist Visas Approved
                 </p>
+
               </div>
 
-              <div className="h-10 w-[1px] bg-gray-200" />
+              <div className="hidden h-10 w-[1px] bg-gray-200 sm:block" />
 
               <div>
+
                 <h3
-                  className="text-5xl text-[#2563EB]"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  className="text-4xl text-[#2563EB] sm:text-5xl"
+                  style={{
+                    fontFamily:
+                      "'Cormorant Garamond', serif",
+                  }}
                 >
                   <CountUp end={98} />%
                 </h3>
+
                 <p
-                  className="mt-1 text-[12px] font-bold uppercase tracking-widest text-gray-400"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  className="mt-1 text-[11px] font-bold uppercase tracking-widest text-gray-400 sm:text-[12px]"
+                  style={{
+                    fontFamily:
+                      "'Inter', sans-serif",
+                  }}
                 >
                   Success Rate
                 </p>
+
               </div>
 
             </div>
 
-            <button
-              className="mt-10 w-full rounded-[3px] border border-transparent bg-[#2563EB] px-8 py-5 text-[13px] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-[#2563EB] hover:bg-white hover:text-[#2563EB] sm:w-auto"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
-              Start Your Application
-            </button>
+            {/* BUTTON */}
+            <Link href="/contact">
+
+              <button
+                className="mt-8 w-full rounded-[3px] border border-transparent bg-[#2563EB] px-6 py-4 text-[12px] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-[#2563EB] hover:bg-white hover:text-[#2563EB] sm:mt-10 sm:w-auto sm:px-8 sm:py-5 sm:text-[13px]"
+                style={{
+                  fontFamily:
+                    "'Inter', sans-serif",
+                }}
+              >
+                Start Your Application
+              </button>
+
+            </Link>
 
           </div>
 
@@ -170,31 +266,47 @@ const TouristVisaSection = () => {
 
         {/* RIGHT SIDE — IMAGE */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
+          initial={{
+            opacity: 0,
+            x: 50,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          transition={{
+            duration: 0.8,
+          }}
+          viewport={{
+            once: true,
+          }}
           className="flex flex-col"
         >
+
           <div className="relative flex h-full w-full flex-col">
 
             {/* BACK BORDER FRAME */}
-            <div className="absolute -left-5 -top-5 h-full w-full rounded-[3px] border-[3px] border-[#2563EB]/20" />
+            <div className="absolute -left-3 -top-3 h-full w-full rounded-[3px] border-[3px] border-[#2563EB]/20 sm:-left-5 sm:-top-5" />
 
             {/* IMAGE */}
-            <div className="relative flex-1 overflow-hidden rounded-[3px] shadow-[0_20px_60px_rgba(0,0,0,0.08)]">
+            <div className="relative min-h-[320px] flex-1 overflow-hidden rounded-[3px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:min-h-[500px]">
+
               <img
-                src="https://i.pinimg.com/1200x/b7/f1/c8/b7f1c8206f620dfbd256bb184f3d37e9.jpg"
+                src="Tourist/touristabout.png"
                 alt="Tourist visa travel"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[4000ms] ease-linear hover:scale-105"
               />
+
               <div className="absolute inset-0 bg-black/10" />
+
             </div>
 
           </div>
+
         </motion.div>
 
       </div>
+
     </section>
   );
 };

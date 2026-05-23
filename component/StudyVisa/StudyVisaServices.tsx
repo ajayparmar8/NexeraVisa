@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import Link from "next/link";
 
 const services = [
   {
@@ -10,7 +11,6 @@ const services = [
       "https://i.pinimg.com/1200x/02/31/a5/0231a54bebebe5eec5fe7a6144362a6d.jpg",
     className: "md:col-span-2 md:row-span-2 h-[520px]",
   },
-
   {
     title: "Application Assistance",
     desc: "Complete support for applications.",
@@ -18,7 +18,6 @@ const services = [
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop",
     className: "md:col-span-1 md:row-span-1 h-[250px]",
   },
-
   {
     title: "Visa Documentation",
     desc: "Professional review of documents.",
@@ -26,7 +25,6 @@ const services = [
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop",
     className: "md:col-span-1 md:row-span-1 h-[250px]",
   },
-
   {
     title: "Interview Preparation",
     desc: "Mock interviews and guidance.",
@@ -34,7 +32,6 @@ const services = [
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop",
     className: "md:col-span-1 md:row-span-1 h-[250px]",
   },
-
   {
     title: "Pre-departure Support",
     desc: "Travel and orientation help.",
@@ -46,125 +43,68 @@ const services = [
 
 /* ANIMATION */
 const fadeUp: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-
-  visible: {
-    opacity: 1,
-    y: 0,
-
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
 const staggerContainer: Variants = {
   hidden: {},
-
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
 const letterContainer: Variants = {
   hidden: {},
-
-  visible: {
-    transition: {
-      staggerChildren: 0.03,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.03 } },
 };
 
 const letterAnimation: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-
-  visible: {
-    opacity: 1,
-    y: 0,
-
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 /* LETTER ANIMATION */
-const AnimatedText = ({
-  text,
-}: {
-  text: string;
-}) => {
-  return (
-    <motion.span
-      variants={letterContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      {text.split("").map((char, index) => (
-        <motion.span
-          key={index}
-          variants={letterAnimation}
-          className="inline-block whitespace-pre"
-        >
-          {char}
-        </motion.span>
-      ))}
-    </motion.span>
-  );
-};
+const AnimatedText = ({ text }: { text: string }) => (
+  <motion.span
+    variants={letterContainer}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+  >
+    {text.split("").map((char, index) => (
+      <motion.span key={index} variants={letterAnimation} className="inline-block whitespace-pre">
+        {char}
+      </motion.span>
+    ))}
+  </motion.span>
+);
 
 export default function StudyVisaServices() {
   return (
-    <section className="bg-[#F8FAFC] px-4 py-20 sm:px-6 lg:px-16">
-
+    <section className="bg-[#F8FAFC] px-4 py-14 sm:px-6 lg:px-16">
       <div className="mx-auto max-w-[1400px]">
 
         {/* TOP */}
-        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 
           {/* LEFT */}
           <div>
-
             <p
               className="mb-3 text-[11px] uppercase tracking-[0.42em] text-[#2563EB]"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-              }}
+              style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Study Visa Services
             </p>
 
             <h2
               className="max-w-[720px] text-[42px] leading-[1.1] text-[#0A0F1C] sm:text-[56px] md:text-[68px]"
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-              }}
+              style={{ fontFamily: "'Cormorant Garamond', serif" }}
             >
-
               <AnimatedText text="Our Study Visa" />
-
               <br />
-
               <span className="text-[#2563EB]">
-
                 <AnimatedText text="Services Include" />
-
               </span>
-
             </h2>
-
           </div>
 
           {/* RIGHT */}
@@ -173,16 +113,11 @@ export default function StudyVisaServices() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="max-w-[450px] text-[15px] leading-8 text-[#6B7280] md:pt-12 md:text-right"
-            style={{
-              fontFamily: "'Inter', sans-serif",
-            }}
+            className="max-w-[450px] text-[15px] leading-7 text-[#6B7280] md:pt-12 md:text-right"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Complete guidance and end-to-end support for
-            international students pursuing education abroad
-            successfully.
+            Complete guidance and end-to-end support for international students pursuing education abroad successfully.
           </motion.p>
-
         </div>
 
         {/* GRID */}
@@ -193,14 +128,12 @@ export default function StudyVisaServices() {
           viewport={{ once: true }}
           className="grid grid-cols-1 gap-5 md:grid-cols-4 md:grid-rows-2"
         >
-
           {services.map((item, index) => (
             <motion.div
               key={index}
               variants={fadeUp}
               className={`group relative overflow-hidden rounded-[3px] ${item.className}`}
             >
-
               {/* IMAGE */}
               <img
                 src={item.image}
@@ -213,44 +146,31 @@ export default function StudyVisaServices() {
 
               {/* CONTENT */}
               <div className="absolute inset-0 flex items-end justify-start">
-
                 <div className="absolute bottom-0 left-0 w-full text-left p-5 sm:p-7">
-
-                  {/* TITLE */}
                   <h3
-                    className="text-[30px] leading-[0.95] text-white md:text-[30px]"
-                    style={{
-                      fontFamily: "'Cormorant Garamond', serif",
-                    }}
+                    className="text-[30px] leading-[0.95] text-white md:text-[25px] animate-[fadeUp_0.8s_ease-out]"
+                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
                   >
                     {item.title}
                   </h3>
 
-                  {/* DESCRIPTION */}
                   <div className="overflow-hidden">
-
                     <p
                       className="mt-2 max-w-[320px] translate-y-6 opacity-0 text-[14px] leading-relaxed text-white/80 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100"
-                      style={{
-                        fontFamily: "'Inter', sans-serif",
-                      }}
+                      style={{ fontFamily: "'Inter', sans-serif" }}
                     >
                       {item.desc}
                     </p>
-
                   </div>
 
+                 
+
                 </div>
-
               </div>
-
             </motion.div>
           ))}
-
         </motion.div>
-
       </div>
-
     </section>
   );
 }

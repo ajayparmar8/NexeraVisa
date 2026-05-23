@@ -1,6 +1,8 @@
 "use client";
 
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+
+import Link from "next/link";
 
 import {
   BriefcaseBusiness,
@@ -76,19 +78,19 @@ const HeroSection = () => {
         {/* RIGHT ARROW */}
         <button
           onClick={nextSlide}
-         className="absolute right-4 top-[42%] z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black md:right-18 md:h-14 md:w-14"
+          className="absolute right-4 top-[42%] z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black md:right-18 md:h-14 md:w-14"
         >
           <ChevronRight size={26} />
         </button>
 
         {/* CONTENT */}
-        <div className="absolute inset-0 z-10 flex items-start justify-center px-5 pt-28 md:px-6 md:pt-42">
+        <div className="absolute inset-0 z-10 flex items-start justify-center px-5 pt-28 md:px-6 md:pt-50">
 
           <div className="text-center">
 
             {/* SUBTITLE */}
             <p
-              className="mb-4 text-[11px] uppercase tracking-[0.32em] text-blue-200 md:text-[13px]"
+              className="mb-4 animate-pulse text-[11px] uppercase tracking-[0.32em] text-blue-200 md:text-[13px]"
               style={{
                 fontFamily: "'Inter', sans-serif",
               }}
@@ -103,31 +105,43 @@ const HeroSection = () => {
                 fontFamily: "'Inter', sans-serif",
               }}
             >
-              The Most Trusted Visa and
+              <span className="inline-block animate-[fadeUp_0.8s_ease-out]">
+                The Most Trusted Visa and
+              </span>
+
               <br className="hidden md:block" />
-              Immigration Consultant
+
+              <span className="inline-block animate-[fadeUp_1.2s_ease-out]">
+                Immigration Consultant
+              </span>
             </h1>
 
             {/* BUTTON */}
-            <button
-              className="mt-8 bg-white px-7 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#2563EB] transition-all duration-300 hover:bg-[#2563EB] hover:text-white md:mt-10 md:px-9 md:py-4 md:text-[14px]"
-              style={{
-                fontFamily: "'Inter', sans-serif",
-              }}
-            >
-              Contact Us
-            </button>
+            <Link href="/contact">
+
+              <button
+                className="mt-8 animate-[fadeUp_1.5s_ease-out] bg-white px-7 py-3 text-[13px] font-semibold uppercase tracking-[0.12em] text-[#2563EB] transition-all duration-300 hover:bg-[#2563EB] hover:text-white md:mt-10 md:px-9 md:py-4 md:text-[14px]"
+                style={{
+                  fontFamily: "'Inter', sans-serif",
+                }}
+              >
+                Contact Us
+              </button>
+
+            </Link>
+
           </div>
+
         </div>
       </div>
 
       {/* SERVICE CARDS */}
-      <div className="relative z-20 mx-auto -mt-30 max-w-[1200px] px-6 pb-10">
+      <div className="relative z-20 mx-auto -mt-25 max-w-[1200px] px-6 pb-10">
 
         <div className="grid gap-5 md:grid-cols-3 md:gap-6">
 
           {/* CARD 1 */}
-          <div className="group bg-white px-7 py-4 text-center shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2">
+          <div className="group animate-[fadeUp_0.8s_ease-out] bg-white px-7 py-4 text-center shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2">
 
             {/* ICON */}
             <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#2563EB] text-white transition-all duration-700 group-hover:rotate-[360deg]">
@@ -138,7 +152,7 @@ const HeroSection = () => {
 
             {/* TITLE */}
             <h3
-              className="mt-4 text-[20px] text-[#111827]"
+              className="mt-4 animate-[fadeUp_1s_ease-out] text-[20px] text-[#111827]"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
               }}
@@ -148,7 +162,7 @@ const HeroSection = () => {
 
             {/* DESCRIPTION */}
             <p
-              className="mx-auto mt-2 max-w-[260px] text-[13px] leading-5 text-gray-500"
+              className="mx-auto mt-2 animate-[fadeUp_1.2s_ease-out] max-w-[260px] text-[13px] leading-5 text-gray-500"
               style={{
                 fontFamily: "'Inter', sans-serif",
               }}
@@ -156,10 +170,11 @@ const HeroSection = () => {
               Professional assistance for obtaining work visas
               across multiple countries.
             </p>
+
           </div>
 
           {/* CARD 2 */}
-          <div className="group bg-white px-7 py-4 text-center shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2">
+          <div className="group animate-[fadeUp_1s_ease-out] bg-white px-7 py-4 text-center shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2">
 
             {/* ICON */}
             <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#2563EB] text-white transition-all duration-700 group-hover:rotate-[360deg]">
@@ -170,7 +185,7 @@ const HeroSection = () => {
 
             {/* TITLE */}
             <h3
-              className="mt-4 text-[20px] text-[#111827]"
+              className="mt-4 animate-[fadeUp_1.2s_ease-out] text-[20px] text-[#111827]"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
               }}
@@ -180,7 +195,7 @@ const HeroSection = () => {
 
             {/* DESCRIPTION */}
             <p
-              className="mx-auto mt-2 max-w-[260px] text-[13px] leading-5 text-gray-500"
+              className="mx-auto mt-2 animate-[fadeUp_1.4s_ease-out] max-w-[260px] text-[13px] leading-5 text-gray-500"
               style={{
                 fontFamily: "'Inter', sans-serif",
               }}
@@ -188,10 +203,11 @@ const HeroSection = () => {
               Expert assistance for student visa applications
               and university admissions.
             </p>
+
           </div>
 
           {/* CARD 3 */}
-          <div className="group bg-white px-7 py-4 text-center shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2">
+          <div className="group animate-[fadeUp_1.2s_ease-out] bg-white px-7 py-4 text-center shadow-[0_12px_35px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-2">
 
             {/* ICON */}
             <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-[#2563EB] text-white transition-all duration-700 group-hover:rotate-[360deg]">
@@ -202,7 +218,7 @@ const HeroSection = () => {
 
             {/* TITLE */}
             <h3
-              className="mt-4 text-[20px] text-[#111827]"
+              className="mt-4 animate-[fadeUp_1.4s_ease-out] text-[20px] text-[#111827]"
               style={{
                 fontFamily: "'Cormorant Garamond', serif",
               }}
@@ -212,7 +228,7 @@ const HeroSection = () => {
 
             {/* DESCRIPTION */}
             <p
-              className="mx-auto mt-2 max-w-[260px] text-[13px] leading-5 text-gray-500"
+              className="mx-auto mt-2 animate-[fadeUp_1.6s_ease-out] max-w-[260px] text-[13px] leading-5 text-gray-500"
               style={{
                 fontFamily: "'Inter', sans-serif",
               }}
@@ -220,9 +236,28 @@ const HeroSection = () => {
               Comprehensive guidance for permanent residency
               and citizenship processes.
             </p>
+
           </div>
+
         </div>
+
       </div>
+
+      {/* TEXT ANIMATION STYLE */}
+      <style jsx>{`
+        @keyframes fadeUp {
+          0% {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+
     </section>
   );
 };

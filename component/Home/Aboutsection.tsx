@@ -35,7 +35,7 @@ const CountUp = ({
 
 const AboutSection = () => {
   return (
-    <section className="overflow-hidden bg-white px-6 py-16 md:px-10 md:py-24 lg:px-16">
+    <section className="overflow-hidden bg-white px-6 py-16 md:px-10 md:py-15 lg:px-16">
       <div className="mx-auto grid max-w-[1350px] gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-20">
         
         {/* LEFT SIDE: Image + Stats */}

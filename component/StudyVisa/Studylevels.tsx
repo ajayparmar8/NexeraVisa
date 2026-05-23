@@ -144,7 +144,7 @@ const FlipIcon = ({ children }: { children: React.ReactNode }) => {
 
 const StudyLevels = () => {
   return (
-    <section className="bg-[#F8FAFC] px-4 pt-16 pb-10 sm:px-6 sm:pt-20 md:px-10 lg:px-16 lg:pt-24 lg:pb-20">
+    <section className="bg-white px-4 pt-16 pb-10 sm:px-6 sm:pt-20 md:px-10 lg:px-16 lg:pt-12 lg:pb-10">
       <div className="mx-auto max-w-[1400px]">
 
         {/* ── HEADING ── */}

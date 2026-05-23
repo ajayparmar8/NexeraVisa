@@ -127,7 +127,7 @@ export default function TouristCTA() {
 
           {/* IMAGE */}
           <img
-            src="CTA.png"
+            src="Tourist/TouristCTA.png"
             alt="Tourist Visa"
             className="absolute inset-0 h-full w-full object-cover"
           />

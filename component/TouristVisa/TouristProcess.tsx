@@ -71,7 +71,7 @@ const staggerContainer: Variants = {
 
 export default function TouristProcess() {
   return (
-    <section className="bg-[#F8F8F2] px-4 py-12 sm:px-6 sm:py-14 lg:px-16 lg:py-20">
+    <section className="bg-white px-4 py-12 sm:px-6 sm:py-14 lg:px-16 lg:py-20">
 
       <div className="mx-auto max-w-[1450px]">
 

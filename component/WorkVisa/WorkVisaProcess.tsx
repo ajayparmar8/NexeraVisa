@@ -84,7 +84,7 @@ const staggerContainer: Variants = {
 
 export default function WorkVisaProcess() {
   return (
-    <section className="bg-[#F8F8F2] px-4 py-16 sm:px-6 lg:px-16">
+    <section className="bg-[#F8FAFC]  px-4 py-16 sm:px-6 lg:px-16">
 
       <div className="mx-auto max-w-[1450px]">
 

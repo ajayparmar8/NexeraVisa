@@ -127,7 +127,7 @@ export default function StudyCTA() {
 
           {/* IMAGE */}
           <img
-            src="CTA.png"
+            src="Study/studyCTA.png"
             alt="Students"
             className="absolute inset-0 h-full w-full object-cover"
           />

@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useRef } from "react";
+import Link from "next/link";
+
 import { motion, useInView } from "framer-motion";
 
 const destinations = [
@@ -51,18 +53,40 @@ const AnimatedLetters = ({
   style?: React.CSSProperties;
 }) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  const inView = useInView(ref, {
+    once: true,
+    margin: "-60px",
+  });
 
   const container = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.03, delayChildren: delay } },
+    visible: {
+      transition: {
+        staggerChildren: 0.03,
+        delayChildren: delay,
+      },
+    },
   };
 
   const letter = {
-    hidden: { opacity: 0, y: 20, rotateX: -40, filter: "blur(4px)" },
+    hidden: {
+      opacity: 0,
+      y: 20,
+      rotateX: -40,
+      filter: "blur(4px)",
+    },
+
     visible: {
-      opacity: 1, y: 0, rotateX: 0, filter: "blur(0px)",
-      transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      filter: "blur(0px)",
+
+      transition: {
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
   };
 
@@ -70,13 +94,24 @@ const AnimatedLetters = ({
     <motion.span
       ref={ref}
       className={className}
-      style={{ display: "inline-block", perspective: "600px", ...style }}
+      style={{
+        display: "inline-block",
+        perspective: "600px",
+        ...style,
+      }}
       variants={container}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
     >
       {text.split("").map((char, i) => (
-        <motion.span key={i} variants={letter as any} style={{ display: "inline-block", whiteSpace: "pre" }}>
+        <motion.span
+          key={i}
+          variants={letter as any}
+          style={{
+            display: "inline-block",
+            whiteSpace: "pre",
+          }}
+        >
           {char}
         </motion.span>
       ))}
@@ -85,16 +120,42 @@ const AnimatedLetters = ({
 };
 
 /* ── Fade Up ── */
-const FadeUp = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
+const FadeUp = ({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+
+  const inView = useInView(ref, {
+    once: true,
+    margin: "-60px",
+  });
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-      animate={inView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={{
+        opacity: 0,
+        y: 20,
+        filter: "blur(6px)",
+      }}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px)",
+            }
+          : {}
+      }
+      transition={{
+        duration: 0.65,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       {children}
     </motion.div>
@@ -113,7 +174,10 @@ const TouristDestinations = () => {
           <FadeUp delay={0}>
             <p
               className="mb-2 text-[10px] uppercase tracking-[0.38em] text-[#2563EB] sm:text-[11px] md:text-[12px]"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+              }}
             >
               Discover the World
             </p>
@@ -122,25 +186,44 @@ const TouristDestinations = () => {
           <h2
             className="text-[38px] leading-[0.95] text-[#0A0F1C] sm:text-[52px] md:text-[68px]"
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              textShadow: "0px 1px 0px rgba(255,255,255,0.6), 0px 8px 30px rgba(10,15,28,0.08)",
+              fontFamily:
+                "'Cormorant Garamond', serif",
+              textShadow:
+                "0px 1px 0px rgba(255,255,255,0.6), 0px 8px 30px rgba(10,15,28,0.08)",
             }}
           >
+
             <span className="text-[#0A0F1C]">
-              <AnimatedLetters text="Popular Tourist" delay={0.15} />
+
+              <AnimatedLetters
+                text="Popular Tourist"
+                delay={0.15}
+              />
+
             </span>{" "}
+
             <span className="text-[#2563EB]">
-              <AnimatedLetters text="Destinations" delay={0.45} />
+
+              <AnimatedLetters
+                text="Destinations"
+                delay={0.45}
+              />
+
             </span>
+
           </h2>
 
           <FadeUp delay={0.8}>
             <p
               className="mx-auto mt-4 max-w-[760px] px-2 text-[14px] leading-7 text-gray-500 sm:text-[15px] md:text-[16px] md:leading-8"
-              style={{ fontFamily: "'Inter', sans-serif" }}
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+              }}
             >
-              Discover the world's most sought-after travel destinations and
-              their visa requirements.
+              Discover the world's most
+              sought-after travel destinations
+              and their visa requirements.
             </p>
           </FadeUp>
 
@@ -152,9 +235,18 @@ const TouristDestinations = () => {
           {destinations.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+              }}
               viewport={{ once: true }}
               className="group relative overflow-hidden rounded-[24px] shadow-[0_20px_60px_rgba(0,0,0,0.16)]"
             >
@@ -174,66 +266,157 @@ const TouristDestinations = () => {
 
                 {/* TITLE */}
                 <motion.h3
-                  initial={{ opacity: 0, x: -16 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{
+                    opacity: 0,
+                    x: -16,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    x: 0,
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    delay:
+                      index * 0.1 + 0.2,
+                    ease: [
+                      0.22,
+                      1,
+                      0.36,
+                      1,
+                    ],
+                  }}
                   viewport={{ once: true }}
                   className="text-[28px] leading-none text-white sm:text-[32px] md:text-[34px]"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  style={{
+                    fontFamily:
+                      "'Cormorant Garamond', serif",
+                  }}
                 >
                   {item.name}
                 </motion.h3>
 
                 {/* VISA */}
                 <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: index * 0.1 + 0.32 }}
+                  initial={{
+                    opacity: 0,
+                    y: 10,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.45,
+                    delay:
+                      index * 0.1 + 0.32,
+                  }}
                   viewport={{ once: true }}
                   className="mt-2 text-[11px] leading-6 text-white/80 sm:text-[12px]"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
+                  style={{
+                    fontFamily:
+                      "'Inter', sans-serif",
+                  }}
                 >
                   Visa Type: {item.visa}
                 </motion.p>
 
                 {/* INFO */}
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.45, delay: index * 0.1 + 0.44 }}
+                  initial={{
+                    opacity: 0,
+                    y: 10,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.45,
+                    delay:
+                      index * 0.1 + 0.44,
+                  }}
                   viewport={{ once: true }}
                   className="mt-3 flex items-center justify-between border-b border-white/15 pb-4"
                 >
+
                   <div>
-                    <p className="text-[12px] text-white/60" style={{ fontFamily: "'Inter', sans-serif" }}>
+
+                    <p
+                      className="text-[12px] text-white/60"
+                      style={{
+                        fontFamily:
+                          "'Inter', sans-serif",
+                      }}
+                    >
                       Validity
                     </p>
-                    <p className="mt-1 text-[13px] text-white sm:text-[14px]" style={{ fontFamily: "'Inter', sans-serif" }}>
+
+                    <p
+                      className="mt-1 text-[13px] text-white sm:text-[14px]"
+                      style={{
+                        fontFamily:
+                          "'Inter', sans-serif",
+                      }}
+                    >
                       {item.validity}
                     </p>
+
                   </div>
 
                   <div className="text-right">
-                    <p className="text-[12px] text-white/60" style={{ fontFamily: "'Inter', sans-serif" }}>
+
+                    <p
+                      className="text-[12px] text-white/60"
+                      style={{
+                        fontFamily:
+                          "'Inter', sans-serif",
+                      }}
+                    >
                       Processing
                     </p>
-                    <p className="mt-1 text-[13px] text-white sm:text-[14px]" style={{ fontFamily: "'Inter', sans-serif" }}>
+
+                    <p
+                      className="mt-1 text-[13px] text-white sm:text-[14px]"
+                      style={{
+                        fontFamily:
+                          "'Inter', sans-serif",
+                      }}
+                    >
                       {item.processing}
                     </p>
+
                   </div>
+
                 </motion.div>
 
                 {/* BUTTON */}
-                <motion.button
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 + 0.55 }}
-                  viewport={{ once: true }}
-                  className="mt-4 w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[14px] font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-[#0A0F1C] sm:py-4 sm:text-[15px]"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
-                >
-                  Apply Now
-                </motion.button>
+                <Link href="/contact">
+
+                  <motion.button
+                    initial={{
+                      opacity: 0,
+                      y: 10,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      delay:
+                        index * 0.1 + 0.55,
+                    }}
+                    viewport={{ once: true }}
+                    className="mt-4 w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[14px] font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-[#0A0F1C] sm:py-4 sm:text-[15px]"
+                    style={{
+                      fontFamily:
+                        "'Inter', sans-serif",
+                    }}
+                  >
+                    Apply Now
+                  </motion.button>
+
+                </Link>
 
               </div>
 
@@ -243,6 +426,7 @@ const TouristDestinations = () => {
         </div>
 
       </div>
+
     </section>
   );
 };

@@ -143,7 +143,7 @@ const FlipIcon = ({ children }: { children: React.ReactNode }) => {
 /* ── MAIN COMPONENT ── */
 const TouristVisaTypes = () => {
   return (
-    <section className="bg-[#F8FAFC] px-4 py-10 sm:px-6 sm:py-12 md:px-10 lg:px-16 lg:py-14">
+    <section className="bg-white px-4 py-10 sm:px-6 sm:py-12 md:px-10 lg:px-16 lg:py-14">
       <div className="mx-auto max-w-[1400px]">
 
         {/* ── HEADING ── */}

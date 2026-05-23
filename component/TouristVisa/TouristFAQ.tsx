@@ -7,7 +7,8 @@ import {
 } from "framer-motion";
 
 import {
-  ChevronDown,
+  Plus,
+  X,
 } from "lucide-react";
 
 import Link from "next/link";
@@ -140,7 +141,7 @@ export default function TouristFAQ() {
             className="max-w-[560px] text-[32px] leading-[1] text-[#0A0F1C] sm:text-[46px] md:text-[58px]"
             style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 600,
+              fontWeight: 500,
             }}
           >
 
@@ -257,32 +258,35 @@ export default function TouristFAQ() {
                   }`}
                 >
 
-                  {/* ICON */}
-                  <motion.div
-                    animate={{
-                      rotate: isOpen ? 180 : 0,
-                    }}
-                    transition={{
-                      duration: 0.35,
-                    }}
-                    className="flex h-9 w-9 min-w-[36px] items-center justify-center rounded-full bg-[#EFF6FF] text-[#2563EB]"
-                  >
-
-                    <ChevronDown size={16} />
-
-                  </motion.div>
-
                   {/* TITLE */}
                   <h3
-                    className="text-[17px] leading-[1.45] text-[#0A0F1C] sm:text-[19px]"
+                    className="flex-1 text-[17px] leading-[1.45] text-[#0A0F1C] sm:text-[19px]"
                     style={{
                       fontFamily: "'Inter', sans-serif",
-                      fontWeight: 600,
+                      fontWeight: 500,
                       letterSpacing: "-0.03em",
                     }}
                   >
                     {faq.question}
                   </h3>
+
+                  {/* ICON */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      rotate: isOpen ? 90 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                    className="flex h-9 w-9 min-w-[36px] items-center justify-center rounded-full bg-[#EFF6FF] text-[#2563EB]"
+                  >
+                    {isOpen ? (
+                      <X size={16} />
+                    ) : (
+                      <Plus size={16} />
+                    )}
+                  </motion.div>
 
                 </button>
 

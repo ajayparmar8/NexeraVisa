@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { motion } from "framer-motion";
 
 import {
@@ -57,18 +59,18 @@ const services = [
 
 export default function TouristVisaServices() {
   return (
-    <section className="bg-[#2563EB] px-4 py-12 sm:px-6 lg:px-16 lg:py-16">
+    <section className="bg-[#2563EB] px-4 py-10 sm:px-6 sm:py-12 lg:px-16 lg:py-16">
 
       <div className="mx-auto max-w-[1400px]">
 
         {/* TOP */}
-        <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col gap-6 md:mb-12 md:flex-row md:items-end md:justify-between">
 
           {/* LEFT */}
           <div>
 
             <p
-              className="mb-3 text-[11px] uppercase tracking-[0.4em] text-white/70"
+              className="mb-3 text-[10px] uppercase tracking-[0.35em] text-white/70 sm:text-[11px] sm:tracking-[0.4em]"
               style={{
                 fontFamily: "'Inter', sans-serif",
               }}
@@ -77,9 +79,10 @@ export default function TouristVisaServices() {
             </p>
 
             <h2
-              className="max-w-[720px] text-[40px] leading-[0.95] text-white sm:text-[54px] md:text-[68px]"
+              className="max-w-[720px] text-[34px] leading-[1] text-white sm:text-[50px] md:text-[68px]"
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily:
+                  "'Cormorant Garamond', serif",
               }}
             >
               Our Tourist Visa
@@ -97,15 +100,17 @@ export default function TouristVisaServices() {
               fontFamily: "'Inter', sans-serif",
             }}
           >
-            Complete support for tourist visa applications,
-            documentation, travel planning, and interview
-            preparation for hassle-free international travel.
+            Complete support for tourist visa
+            applications, documentation,
+            travel planning, and interview
+            preparation for hassle-free
+            international travel.
           </p>
 
         </div>
 
         {/* SERVICES */}
-        <div className="grid grid-cols-1 gap-y-5 border-t border-white/20 pt-8 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-y-5 border-t border-white/20 pt-8 sm:grid-cols-2 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-10">
 
           {services.map((item, index) => (
             <motion.div
@@ -127,7 +132,7 @@ export default function TouristVisaServices() {
             >
 
               {/* ICON */}
-              <div className="flex h-12 w-12 min-w-[48px] items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-all duration-500 group-hover:rotate-[360deg] group-hover:bg-white group-hover:text-[#2563EB]">
+              <div className="flex h-11 w-11 min-w-[44px] items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-all duration-500 group-hover:rotate-[360deg] group-hover:bg-white group-hover:text-[#2563EB] sm:h-12 sm:w-12 sm:min-w-[48px]">
 
                 {item.icon}
 
@@ -135,7 +140,7 @@ export default function TouristVisaServices() {
 
               {/* TEXT */}
               <p
-                className="text-[14px] leading-7 text-white/90 sm:text-[15px]"
+                className="text-[13px] leading-6 text-white/90 sm:text-[15px] sm:leading-7"
                 style={{
                   fontFamily: "'Inter', sans-serif",
                 }}
@@ -149,7 +154,7 @@ export default function TouristVisaServices() {
         </div>
 
         {/* BOTTOM */}
-        <div className="mt-12 flex flex-col gap-5 border-t border-white/20 pt-6 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-5 border-t border-white/20 pt-6 md:mt-12 md:flex-row md:items-center md:justify-between">
 
           {/* PROCESSING */}
           <p
@@ -161,25 +166,31 @@ export default function TouristVisaServices() {
             <span className="font-semibold text-white">
               Processing Time:
             </span>{" "}
-            Most tourist visas are processed within 2–4 weeks.
+            Most tourist visas are processed
+            within 2–4 weeks.
           </p>
 
           {/* BUTTON */}
-          <motion.button
-            whileHover={{
-              scale: 1.03,
-            }}
-            whileTap={{
-              scale: 0.97,
-            }}
-            className="rounded-[6px] border border-white/30 bg-white px-7 py-3 text-[14px] text-[#2563EB] transition-all duration-300 hover:bg-[#EFF6FF]"
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontWeight: 600,
-            }}
-          >
-            Get Started Today
-          </motion.button>
+          <Link href="/contact">
+
+            <motion.button
+              whileHover={{
+                scale: 1.03,
+              }}
+              whileTap={{
+                scale: 0.97,
+              }}
+              className="w-full rounded-[6px] border border-white/30 bg-white px-6 py-3 text-[13px] text-[#2563EB] transition-all duration-300 hover:bg-[#EFF6FF] sm:w-auto sm:px-7 sm:text-[14px]"
+              style={{
+                fontFamily:
+                  "'Inter', sans-serif",
+                fontWeight: 600,
+              }}
+            >
+              Get Started Today
+            </motion.button>
+
+          </Link>
 
         </div>
 

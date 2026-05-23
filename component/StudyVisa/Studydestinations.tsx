@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useRef } from "react";
+import Link from "next/link";
+
 import { motion, useInView } from "framer-motion";
 
 const destinations = [
@@ -74,6 +76,7 @@ const AnimatedLetters = ({
       rotateX: -40,
       filter: "blur(4px)",
     },
+
     visible: {
       opacity: 1,
       y: 0,
@@ -277,6 +280,7 @@ const StudyDestinations = () => {
                     >
                       Top Universities
                     </p>
+
                     <p
                       className="mt-1 text-[13px] text-white sm:text-[14px]"
                       style={{ fontFamily: "'Inter', sans-serif" }}
@@ -292,6 +296,7 @@ const StudyDestinations = () => {
                     >
                       Avg. Cost
                     </p>
+
                     <p
                       className="mt-1 text-[13px] text-white sm:text-[14px]"
                       style={{ fontFamily: "'Inter', sans-serif" }}
@@ -303,16 +308,23 @@ const StudyDestinations = () => {
                 </motion.div>
 
                 {/* BUTTON */}
-                <motion.button
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 + 0.55 }}
-                  viewport={{ once: true }}
-                  className="mt-4 w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[14px] font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-[#0A0F1C] sm:py-4 sm:text-[15px]"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
-                >
-                  Explore Programs
-                </motion.button>
+                <Link href="/contact">
+
+                  <motion.button
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.1 + 0.55,
+                    }}
+                    viewport={{ once: true }}
+                    className="mt-4 w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[14px] font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-[#0A0F1C] sm:py-4 sm:text-[15px]"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  >
+                    Explore Programs
+                  </motion.button>
+
+                </Link>
 
               </div>
 
@@ -322,6 +334,7 @@ const StudyDestinations = () => {
         </div>
 
       </div>
+
     </section>
   );
 };

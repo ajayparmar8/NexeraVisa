@@ -21,7 +21,7 @@ const fadeIn: Variants = {
   }),
 };
 
-export default function TouristVisaHero() {
+export default function AboutHero() {
   return (
     <section
       className="relative w-full overflow-hidden"
@@ -29,8 +29,8 @@ export default function TouristVisaHero() {
     >
       {/* BACKGROUND IMAGE */}
       <img
-        src="Tourist/tourist.png"
-        alt="Tourist Visa"
+        src="Abouthero.png"
+        alt="Study Visa"
         className="absolute inset-0 h-[550px] w-full object-cover object-center"
       />
 
@@ -50,7 +50,7 @@ export default function TouristVisaHero() {
           className="text-[10px] uppercase tracking-[0.35em] text-[#60A5FA] sm:text-[11px] md:text-[12px]"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
-          Immigration Services
+          About Us
         </motion.p>
 
         {/* HEADING */}
@@ -62,7 +62,7 @@ export default function TouristVisaHero() {
           className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
-         Tourist Visa Services
+         About Nexera Consultancy
         </motion.h1>
 
         {/* BREADCRUMB */}
@@ -81,7 +81,7 @@ export default function TouristVisaHero() {
             Home
           </Link>
           <span className="text-gray-400">/</span>
-          <span className="text-gray-200">Tourist Visa</span>
+          <span className="text-gray-200">About Us</span>
         </motion.div>
 
         {/* DESCRIPTION */}
@@ -93,7 +93,7 @@ export default function TouristVisaHero() {
           className="mt-3 max-w-[90%] text-[13px] leading-7 text-gray-300 sm:max-w-[520px] sm:text-[14px] md:max-w-[600px] md:text-[15px] md:leading-8"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
-         Quick and reliable processing for tourist visas, family visits, and business travel
+         Learn more about Nexera Consultancy and our commitment to helping students achieve their educational goals abroad.
         </motion.p>
       </div>
     </section>

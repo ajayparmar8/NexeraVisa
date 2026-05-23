@@ -29,7 +29,7 @@ export default function StudyVisaHero() {
     >
       {/* BACKGROUND IMAGE */}
       <img
-        src="study1.png"
+        src="Study/study1.png"
         alt="Study Visa"
         className="absolute inset-0 h-[550px] w-full object-cover object-center"
       />

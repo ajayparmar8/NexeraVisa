@@ -6,6 +6,8 @@ import React, {
   useRef,
 } from "react";
 
+import Link from "next/link";
+
 import {
   motion,
   useInView,
@@ -71,7 +73,7 @@ const CountUp = ({
 
 const WorkVisaSection = () => {
   return (
-    <section className="overflow-hidden bg-[#F8FAFC] px-6 py-20 md:px-10 lg:px-16 md:py-28">
+    <section className="overflow-hidden bg-white px-6 py-20 md:px-10 lg:px-16 md:py-25">
 
       <div className="mx-auto grid max-w-[1350px] gap-16 lg:grid-cols-2 lg:items-stretch">
 
@@ -283,21 +285,26 @@ const WorkVisaSection = () => {
             </div>
 
             {/* BUTTON */}
-            <button
-              className="mt-10 w-full rounded-[3px] border border-transparent bg-[#2563EB] px-8 py-5 text-[13px] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-[#2563EB] hover:bg-white hover:text-[#2563EB] sm:w-auto"
-              style={{
-                fontFamily:
-                  "'Inter', sans-serif",
-              }}
-            >
-              Start Your Application
-            </button>
+            <Link href="/contact">
+
+              <button
+                className="mt-10 w-full rounded-[3px] border border-transparent bg-[#2563EB] px-8 py-5 text-[13px] font-bold uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-[#2563EB] hover:bg-white hover:text-[#2563EB] sm:w-auto"
+                style={{
+                  fontFamily:
+                    "'Inter', sans-serif",
+                }}
+              >
+                Start Your Application
+              </button>
+
+            </Link>
 
           </div>
 
         </motion.div>
 
       </div>
+
     </section>
   );
 };
