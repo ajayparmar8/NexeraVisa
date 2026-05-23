@@ -1,0 +1,334 @@
+"use client";
+
+import {
+  motion,
+  AnimatePresence,
+  Variants,
+} from "framer-motion";
+
+import {
+  Plus,
+  X,
+} from "lucide-react";
+
+
+import { useState } from "react";
+
+const faqs = [
+  {
+    question:
+      "How long does the visa process take?",
+
+    answer:
+      "Processing times vary depending on the visa type and destination country. Tourist visas usually take 2–4 weeks, while study and work visas may require additional processing time.",
+  },
+
+  {
+    question:
+      "What documents are required for visa application?",
+
+    answer:
+      "Required documents generally include passport, photographs, financial proof, travel itinerary, admission/work documents, and supporting identification papers.",
+  },
+
+  {
+    question:
+      "Can you assist with urgent visa applications?",
+
+    answer:
+      "Yes, we provide expedited visa assistance for urgent travel situations depending on embassy and country availability.",
+  },
+
+  {
+    question:
+      "What happens if my visa application gets rejected?",
+
+    answer:
+      "Our experts carefully analyze the rejection reason and guide you through reapplication with stronger documentation and improved approval chances.",
+  },
+];
+
+/* ───────────────── TEXT ANIMATION ───────────────── */
+
+const letterContainer: Variants = {
+  hidden: {},
+
+  visible: {
+    transition: {
+      staggerChildren: 0.03,
+    },
+  },
+};
+
+const letterAnimation: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
+
+const AnimatedText = ({
+  text,
+}: {
+  text: string;
+}) => {
+  return (
+    <motion.span
+      variants={letterContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          variants={letterAnimation}
+          className="inline-block whitespace-pre"
+        >
+          {char}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+};
+
+export default function ContactFAQ() {
+  const [openIndex, setOpenIndex] =
+    useState<number | null>(0);
+
+  return (
+    <section className="bg-white px-4 py-10 sm:px-6 sm:py-14 lg:px-16 lg:py-20">
+
+      <div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+
+        {/* ───────── LEFT SIDE ───────── */}
+        <div className="flex flex-col justify-center">
+
+          {/* LABEL */}
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 10,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.5,
+            }}
+            viewport={{ once: true }}
+            className="mb-3 text-[10px] uppercase tracking-[0.4em] text-[#2563EB]"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            FAQ
+          </motion.p>
+
+          {/* HEADING */}
+          <h2
+            className="max-w-[560px] text-[32px] leading-[1] text-[#0A0F1C] sm:text-[46px] md:text-[58px]"
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontWeight: 500,
+            }}
+          >
+
+            <span className="text-[#0A0F1C]">
+
+              <AnimatedText text="Frequently Asked" />
+
+            </span>
+
+            <br />
+
+            <span className="text-[#2563EB]">
+
+              <AnimatedText text="Questions" />
+
+            </span>
+
+          </h2>
+
+          {/* DESCRIPTION */}
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 14,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 0.2,
+            }}
+            viewport={{ once: true }}
+            className="mt-5 max-w-[500px] text-[14px] leading-7 text-[#6B7280] sm:text-[15px]"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            Get quick answers to common tourist visa
+            questions and understand the application
+            process with ease.
+          </motion.p>
+
+          
+        </div>
+
+        {/* ───────── FAQ RIGHT ───────── */}
+        <div className="space-y-3">
+
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 24,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
+                viewport={{ once: true }}
+                layout
+                className="overflow-hidden rounded-[4px] border border-[#EEF2FF] bg-white transition-all duration-500 hover:border-[#2563EB]/20 hover:shadow-[0_12px_30px_rgba(37,99,235,0.06)]"
+              >
+
+                {/* QUESTION */}
+                <button
+                  onClick={() =>
+                    setOpenIndex(
+                      isOpen ? null : index
+                    )
+                  }
+                  className={`flex w-full items-center gap-4 px-4 py-4 text-left transition-all duration-500 sm:px-5 ${
+                    isOpen
+                      ? "bg-[#EFF6FF]"
+                      : "bg-white hover:bg-[#F8FAFC]"
+                  }`}
+                >
+
+                  {/* TITLE */}
+                  <h3
+                    className="flex-1 text-[17px] leading-[1.45] text-[#0A0F1C] sm:text-[19px]"
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: 500,
+                      letterSpacing: "-0.03em",
+                    }}
+                  >
+                    {faq.question}
+                  </h3>
+
+                  {/* ICON */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      rotate: isOpen ? 90 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                    }}
+                    className="flex h-9 w-9 min-w-[36px] items-center justify-center rounded-full bg-[#EFF6FF] text-[#2563EB]"
+                  >
+                    {isOpen ? (
+                      <X size={16} />
+                    ) : (
+                      <Plus size={16} />
+                    )}
+                  </motion.div>
+
+                </button>
+
+                {/* ANSWER */}
+                <AnimatePresence initial={false}>
+
+                  {isOpen && (
+                    <motion.div
+                      initial={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        height: "auto",
+                        opacity: 1,
+                      }}
+                      exit={{
+                        height: 0,
+                        opacity: 0,
+                      }}
+                      transition={{
+                        duration: 0.35,
+                        ease: "easeInOut",
+                      }}
+                      className="overflow-hidden"
+                    >
+
+                      <motion.div
+                        initial={{
+                          y: -8,
+                          opacity: 0,
+                        }}
+                        animate={{
+                          y: 0,
+                          opacity: 1,
+                        }}
+                        exit={{
+                          y: -8,
+                          opacity: 0,
+                        }}
+                        transition={{
+                          duration: 0.3,
+                        }}
+                        className="px-5 pb-5 pt-1"
+                      >
+
+                        <p
+                          className="max-w-[650px] text-[14px] leading-7 text-[#6B7280] sm:text-[15px]"
+                          style={{
+                            fontFamily:
+                              "'Inter', sans-serif",
+                          }}
+                        >
+                          {faq.answer}
+                        </p>
+
+                      </motion.div>
+
+                    </motion.div>
+                  )}
+
+                </AnimatePresence>
+
+              </motion.div>
+            );
+          })}
+
+        </div>
+
+      </div>
+
+    </section>
+  );
+}

@@ -29,7 +29,7 @@ export default function AboutHero() {
     >
       {/* BACKGROUND IMAGE */}
       <img
-        src="Abouthero.png"
+        src="About/Abouthero.png"
         alt="Study Visa"
         className="absolute inset-0 h-[550px] w-full object-cover object-center"
       />

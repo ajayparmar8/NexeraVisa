@@ -29,7 +29,7 @@ export default function ContactHero() {
     >
       {/* BACKGROUND IMAGE */}
       <img
-        src="study1.png"
+        src="Contact/Contacthero.png"
         alt="Study Visa"
         className="absolute inset-0 h-[550px] w-full object-cover object-center"
       />
@@ -39,7 +39,7 @@ export default function ContactHero() {
 
       {/* CONTENT — perfectly centered with equal top/bottom space */}
       {/* CONTENT */}
-<div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-6 pt-16">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-6 pt-16">
 
         {/* LABEL */}
         <motion.p

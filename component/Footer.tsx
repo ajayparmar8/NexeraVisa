@@ -6,16 +6,16 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-[#020817] text-gray-400 py-8 px-6 md:px-16 font-sans">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl h-50 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
         {/* Company Info Section */}
-        <div className="space-y-6">
+        <div className="space-y-5">
 
           {/* Logo */}
           <img
-            src="footerlogo.png"
+            src="Logo4.png"
             alt="Nexera Consultancy"
-            className="h-12 w-auto object-contain"
+            className="h-16 md:-ml-8 w-auto object-contain"
             style={{ filter: "brightness(0) invert(1)" }}
           />
 
@@ -269,7 +269,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright Divider */}
-      <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm">
+      <div className="mt-8 pt-5 border-t border-gray-800 text-center text-sm">
 
         <p>
           © 2025 Nexera Consultancy. All rights reserved.

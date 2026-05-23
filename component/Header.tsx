@@ -35,9 +35,9 @@ export default function Header() {
           className="flex items-center"
         >
           <img
-            src="/Logo2.png"
+            src="/Logo4.png"
             alt="Nexera Consultancy"
-            className="h-16 w-auto object-contain sm:h-20 md:h-24"
+            className="h-16 w-auto object-contain sm:h-20 md:h-14 md:-ml-4"
           />
         </Link>
 

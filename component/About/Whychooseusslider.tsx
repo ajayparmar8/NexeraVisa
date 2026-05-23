@@ -225,7 +225,7 @@ export default function WhyChooseUsSlider() {
 
       {/* ── SECTION ── warm off-white like the screenshot */}
       <section
-        className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-16 lg:py-28"
+        className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-16 lg:py-15"
         style={{ backgroundColor: "#f5f3ef" }}
       >
 

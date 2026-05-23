@@ -22,21 +22,21 @@ const services = [
     title: "Visa Documentation",
     desc: "Professional review of documents.",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1600&auto=format&fit=crop",
+      "https://i.pinimg.com/736x/06/f6/ba/06f6ba8a60f9f64fc96d6d825b35ab9a.jpg",
     className: "md:col-span-1 md:row-span-1 h-[250px]",
   },
   {
     title: "Interview Preparation",
     desc: "Mock interviews and guidance.",
     image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop",
+      "https://i.pinimg.com/1200x/60/a7/77/60a7779444e8d3bdd3b240eced9ada89.jpg",
     className: "md:col-span-1 md:row-span-1 h-[250px]",
   },
   {
     title: "Pre-departure Support",
     desc: "Travel and orientation help.",
     image:
-      "https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=1600&auto=format&fit=crop",
+      "https://i.pinimg.com/736x/9f/1b/3c/9f1b3cc7a89f92825b2850ba1f57b33f.jpg",
     className: "md:col-span-1 md:row-span-1 h-[250px]",
   },
 ];
