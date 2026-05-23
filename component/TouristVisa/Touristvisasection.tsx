@@ -292,7 +292,7 @@ const TouristVisaSection = () => {
             <div className="relative min-h-[320px] flex-1 overflow-hidden rounded-[3px] shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:min-h-[500px]">
 
               <img
-                src="Tourist/touristabout.png"
+                src="Tourist/Touristabout.png"
                 alt="Tourist visa travel"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-[4000ms] ease-linear hover:scale-105"
               />
