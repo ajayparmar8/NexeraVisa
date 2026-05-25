@@ -7,28 +7,28 @@ const services = [
     title: "Expert Documentation",
     desc: "Professional preparation of all required documents and forms.",
     image:
-      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1600&auto=format&fit=crop",
+      "Work/WorkW1.png",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     title: "Fast Processing",
     desc: "Expedited processing to minimize waiting times.",
     image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop",
+      "Work/WorkW2.png",
     className: "md:col-span-1 md:row-span-1",
   },
   {
     title: "Dedicated Support",
     desc: "Personal case manager for each application.",
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop",
+      "Work/WorkW4.png",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     title: "Proven Success",
     desc: "High approval rates with thousands of successful cases.",
     image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
+      "Work/WorkW3.png",
     className: "md:col-span-2 md:row-span-1",
   },
 ];
