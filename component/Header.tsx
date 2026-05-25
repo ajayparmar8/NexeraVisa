@@ -37,7 +37,7 @@ export default function Header() {
           <img
             src="/Logo4.png"
             alt="Nexera Consultancy"
-            className="h-12 w-auto object-contain sm:h-14 md:h-14 lg:h-16 lg:-ml-4"
+            className="h-12 w-auto object-contain sm:h-14 md:h-14 lg:h-14 lg:-ml-4"
           />
         </Link>
 
