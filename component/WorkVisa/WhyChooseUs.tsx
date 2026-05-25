@@ -21,14 +21,14 @@ const services = [
     title: "Dedicated Support",
     desc: "Personal case manager for each application.",
     image:
-      "Work/WorkW4.png",
+      "Work/WorkW3.png",
     className: "md:col-span-1 md:row-span-2",
   },
   {
     title: "Proven Success",
     desc: "High approval rates with thousands of successful cases.",
     image:
-      "Work/WorkW3.png",
+      "Work/WorkW4.png",
     className: "md:col-span-2 md:row-span-1",
   },
 ];
