@@ -27,18 +27,22 @@ export default function Header() {
     <header className="fixed left-0 top-0 z-50 w-full border-b border-[#E5E7EB] bg-white shadow-sm">
 
       {/* MAIN HEADER */}
-      <div className="mx-auto flex h-[68px] max-w-[1450px] items-center justify-between px-4 sm:px-5 md:px-6 lg:h-[82px] lg:px-10">
+     <div className="mx-auto flex h-[70px] max-w-[1450px] items-center justify-between px-4 sm:px-5 md:px-6 lg:px-10">
 
         {/* LOGO */}
         <Link
           href="/"
           className="flex items-center"
         >
-          <img
-            src="/Logo4.png"
-            alt="Nexera Consultancy"
-            className="h-12 w-auto object-contain sm:h-14 md:h-14 lg:h-14 lg:-ml-4"
-          />
+
+
+<img
+  src="/Logo4.png"
+  alt="Nexera Consultancy"
+  width={220}
+  height={60}
+  className="h-12 w-auto object-contain"
+/>
         </Link>
 
         {/* DESKTOP NAVIGATION */}
@@ -55,7 +59,7 @@ export default function Header() {
           >
             Home
 
-            <span className="absolute -bottom-2 left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-[2px] left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 ease-out group-hover:w-full" />
           </Link>
 
           {/* VISA */}
@@ -87,7 +91,7 @@ export default function Header() {
                 }`}
               />
 
-              <span className="absolute -bottom-2 left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-[2px] left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 ease-out group-hover:w-full" />
 
             </button>
 
@@ -167,7 +171,7 @@ export default function Header() {
           >
             About Us
 
-            <span className="absolute -bottom-2 left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-[2px] left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 ease-out group-hover:w-full" />
           </Link>
 
           {/* CONTACT */}
@@ -181,7 +185,7 @@ export default function Header() {
           >
             Contact Us
 
-            <span className="absolute -bottom-2 left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full" />
+            <span className="absolute -bottom-[2px] left-0 h-[1.5px] w-0 bg-[#2563EB] transition-all duration-300 ease-out group-hover:w-full" />
           </Link>
 
         </nav>
@@ -273,7 +277,7 @@ export default function Header() {
             transition={{
               duration: 0.25,
             }}
-            className="max-h-[calc(100vh-68px)] overflow-y-auto border-t border-[#E5E7EB] bg-white lg:hidden"
+            className="max-h-[calc(100vh-70px)] overflow-y-auto border-t border-[#E5E7EB] bg-white lg:hidden"
           >
 
             <div className="flex flex-col px-5 py-4">
