@@ -16,10 +16,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Nexera Consultancy",
+export const metadata = {
+  title: "Nexera Visa | Immigration, Study, Work & Visitor Visa Consultants",
   description:
-    "Trusted Visa & Immigration Consultancy Services",
+    "Nexera Visa provides expert immigration, study visa, work permit, visitor visa, and PR consultancy services worldwide.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
